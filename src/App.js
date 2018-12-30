@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
@@ -10,16 +9,6 @@ class App extends Component {
     }
   }
 
-  componentDidMount() {
-    console.log('mounted')
-    window.removeEventListener('error', () => {
-      console.log('removed')
-    }, true)
-    window.removeEventListener('unhandlerejection', () => {
-      console.log('removed')
-    }, true)
-  }
-
   increment() {
     this.setState({ count: this.state.count + 1 })
   }
@@ -27,9 +16,8 @@ class App extends Component {
     return (
       <div className="App">
         <button onClick={() => this.incremen()}>Click Me!</button>
-        <p>
-          Button Clicks: {this.state.count}
-        </p>
+        <p>Click the button above to increment the number below.</p>
+        <p>Button Clicks: {this.state.count}</p>
       </div>
     );
   }
