@@ -5,14 +5,22 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      timer: 0
     }
+  }
+
+  componenetDidMount() {
+    console.log('componentDidMount method invoked...')
+    const incrementTimer = () => this.setState({ timer: this.state.timer + 1 })
+    setInterval(incrementTimer, 1000)
   }
 
 
   render() {
     return (
       <div className="App">
-        <p>Checkout to branch "one" to start.</p>
+        <p>How many seconds have you been on my app?</p>
+        <p>{this.state.timer} seconds</p>
       </div>
     );
   }
