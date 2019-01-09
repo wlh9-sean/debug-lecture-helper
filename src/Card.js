@@ -26,6 +26,11 @@ const styles = {
   },
 };
 
+function random() {
+  let noArr = ["I'd rather not.", "Nope.", "I kinda like this car.", "No one wants to buy that.", "You don't have the authority to sell this car.", "Uh, oh. Trying to sell something that isn't your ain't cool!", 'No. ☹']
+  alert(noArr[Math.floor(Math.random() * 7)])
+}
+
 function SimpleCard(props) {
   const { id, year, make, model, color, price, classes } = props.vehicle;
 
@@ -49,7 +54,7 @@ function SimpleCard(props) {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Sell car</Button>
+        <Button size="small" onClick={random}>Sell car</Button>
       </CardActions>
     </Card>
   );
