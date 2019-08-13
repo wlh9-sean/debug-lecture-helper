@@ -6,6 +6,13 @@ const session = require('express-session');
 
 const app = express();
 
+const {
+  SESSION_SECRET,
+  SERVER_PORT
+} = process.env
+
+app.use(express.json())
+
 app.use(
   session({
     secret: SESSION_SECRET,
@@ -21,6 +28,7 @@ app.use((req, res, next) => {
       let regex = new RegExp(badWords[i], 'g');
       req.body.message = req.body.message.replace(regex, '****');
     }
+    next()
   } else {
     next();
   }
