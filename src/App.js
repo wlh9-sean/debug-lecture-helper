@@ -9,7 +9,7 @@ class App extends Component {
     }
   }
 
-  componenetDidMount() {
+  componentDidMount() {
     console.log('componentDidMount method invoked...')
     const incrementTimer = () => this.setState({ timer: this.state.timer + 1 })
     setInterval(incrementTimer, 1000)
